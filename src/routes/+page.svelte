@@ -1,3 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<div>First edit on new linux install</div>
+<script>
+  import { page } from '$app/stores'
+  import Account from './Account.svelte'
+  import Auth from './Auth.svelte'
+	console.log($page);
+
+</script>
+
+<svelte:head>
+  <title>Supabase + SvelteKit</title>
+  <meta name="description" content="SvelteKit using supabase-js v2" />
+</svelte:head>
+
+{#if !$page.data.session}
+<Auth />
+{:else}
+<Account session="{$page.data.session}" />
+{/if}
+
