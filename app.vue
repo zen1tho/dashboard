@@ -1,7 +1,4 @@
-<script lang="ts">
-import { main } from "./lib/notifications";
-main();
-</script>
+<script lang="ts"></script>
 
 <template>
   <Notifications />
